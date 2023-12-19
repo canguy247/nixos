@@ -103,6 +103,7 @@
     nextcloud-client
     ncspot
     arduino
+
     ripgrep
     fd
     cmake
@@ -124,6 +125,15 @@
     shfmt
     shellcheck
     rnix-lsp
+
+    dunst
+    waybar
+    alacritty
+    wofi
+
+    (pkgs.waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -152,6 +162,10 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
+
+  programs.hyprland.enable = true;
+  # Optional, hint electron apps to use wayland:
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

@@ -1,4 +1,4 @@
-{ config,lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -15,8 +15,6 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-
-
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -26,7 +24,6 @@
 
     pkgs.git
     pkgs.nixfmt
-    
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -68,16 +65,15 @@
   #
   #  /etc/profiles/per-user/methots/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "emacs";
-  };
+  home.sessionVariables = { EDITOR = "emacs"; };
 
   programs.bash = {
     enable = true;
     shellAliases = {
       ll = "ls -l ";
       ".." = "cd ..";
-      config="/home/methots/.nix-profile/bin/git --git-dir=$HOME/.dotfiles/.cfg/ --work-tree=$HOME";
+      config =
+        "/home/methots/.nix-profile/bin/git --git-dir=$HOME/.dotfiles/.cfg/ --work-tree=$HOME";
     };
   };
 
