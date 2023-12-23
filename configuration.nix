@@ -80,8 +80,8 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "methots";
+  #  services.xserver.displayManager.autoLogin.enable = true;
+  #  services.xserver.displayManager.autoLogin.user = "methots";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -90,7 +90,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    emacs29
     wget
     git
     curl
@@ -103,8 +102,9 @@
     nextcloud-client
     ncspot
     arduino
-
+    #Emacs requirements
     ripgrep
+    emacs29
     fd
     cmake
     gnumake
@@ -125,11 +125,18 @@
     shfmt
     shellcheck
     rnix-lsp
-
+    #Hyprland requirements
     dunst
     waybar
     alacritty
     wofi
+    foot
+    nwg-drawer
+    nwg-bar
+    pavucontrol
+    htop
+    mako
+    wpaperd
 
     (pkgs.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
