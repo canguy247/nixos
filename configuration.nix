@@ -90,11 +90,13 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    emacs29
     wget
     git
     curl
-    syncthing
-    syncthingtray
+    # moved to service in syncthing.nix
+    # syncthing
+    # syncthingtray
     obsidian
     telegram-desktop
     super-slicer
@@ -102,9 +104,8 @@
     nextcloud-client
     ncspot
     arduino
-    #Emacs requirements
+    # Emacs requirements
     ripgrep
-    emacs29
     fd
     cmake
     gnumake
@@ -125,7 +126,7 @@
     shfmt
     shellcheck
     rnix-lsp
-    #Hyprland requirements
+    # Hyprland requirements
     dunst
     waybar
     alacritty
@@ -169,6 +170,8 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
+
+  hardware.opengl.enable = true;
 
   programs.hyprland.enable = true;
   # Optional, hint electron apps to use wayland:
