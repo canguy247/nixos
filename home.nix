@@ -89,7 +89,7 @@
       ll = "ls -l ";
       ".." = "cd ..";
       config =
-        "/home/methots/.nix-profile/bin/git --git-dir=$HOME/.dotfiles/.cfg/ --work-tree=$HOME";
+        "/home/methots/.nix-profile/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
     };
   };
 
