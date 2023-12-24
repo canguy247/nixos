@@ -20,7 +20,18 @@
           inherit system;
           modules = [ ./configuration.nix ./modules/syncthing.nix ];
         };
+        win2 = {
+          inherit system;
+          modules = [
+            ./configuration.nix
+            ./modules/syncthing.nix
+            ./devices/win2.nix
+            ./modules/steam.nix
+            ./modules/wifi.nix
+          ];
+        };
       };
+
       homeConfigurations = {
         methots = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
