@@ -20,14 +20,14 @@
           inherit system;
           modules = [ ./configuration.nix ./modules/syncthing.nix ];
         };
-        win2 = {
+        nixosWin2 = lib.nixosSystem {
           inherit system;
           modules = [
             ./configuration.nix
             ./modules/syncthing.nix
-            ./devices/win2.nix
+            # ./devices/win2.nix
             ./modules/steam.nix
-            ./modules/wifi.nix
+            # ./modules/wifi.nix
           ];
         };
       };

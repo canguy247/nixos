@@ -5,10 +5,10 @@
     inputs.nixos-hardware.nixosModules.gpd-win-2
   ];
 
-  swapDevices = [{
-    device = "/swap";
-    size = 2048;
-  }];
+#  swapDevices = [{
+#    device = "/swap";
+#    size = 2048;
+#  }];
 
   boot = {
     initrd.availableKernelModules =

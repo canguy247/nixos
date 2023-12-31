@@ -139,6 +139,8 @@
     mako
     wpaperd
 
+    font-awesome_5
+
     (pkgs.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
