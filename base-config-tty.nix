@@ -1,49 +1,6 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
-    ./hardware-nixosWin2.nix
-  ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nixosDesktop"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "America/Toronto";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_CA.UTF-8";
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -61,11 +18,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.methots = {
@@ -97,13 +49,10 @@
     # moved to service in syncthing.nix
     # syncthing
     # syncthingtray
-    obsidian
-    telegram-desktop
-    super-slicer
-    prusa-slicer
-    nextcloud-client
+
+    #Spotify for tty
     ncspot
-    arduino
+
     # Emacs requirements
     ripgrep
     fd
@@ -126,24 +75,7 @@
     shfmt
     shellcheck
     rnix-lsp
-    # Hyprland requirements
-    dunst
-    waybar
-    alacritty
-    wofi
-    foot
-    nwg-drawer
-    nwg-bar
-    pavucontrol
-    htop
-    mako
-    wpaperd
 
-    font-awesome_5
-
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-    }))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -172,12 +104,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
-  hardware.opengl.enable = true;
-
-  programs.hyprland.enable = true;
-  # Optional, hint electron apps to use wayland:
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

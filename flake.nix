@@ -20,10 +20,34 @@
           inherit system;
           modules = [ ./configuration.nix ./modules/syncthing.nix ];
         };
-        nixosWin2 = lib.nixosSystem {
+        nixosWin2old = lib.nixosSystem {
           inherit system;
           modules = [
             ./configuration.nix
+            ./modules/syncthing.nix
+            # ./devices/win2.nix
+            ./modules/steam.nix
+            # ./modules/wifi.nix
+          ];
+        };
+        nixosWin2 = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./base-config-tty.nix
+            ./base-config-gui.nix
+            ./config-nixosWin2.nix
+            ./modules/syncthing.nix
+            # ./devices/win2.nix
+            ./modules/steam.nix
+            # ./modules/wifi.nix
+          ];
+        };
+        nixosWinMax2 = lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./base-config-tty.nix
+            ./base-config-gui.nix
+            ./config-nixosWinMax2.nix
             ./modules/syncthing.nix
             # ./devices/win2.nix
             ./modules/steam.nix

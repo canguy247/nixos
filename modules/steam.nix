@@ -20,6 +20,7 @@
     vulkan-tools
     vulkan-loader
     vulkan-headers
+    heroic
     #wine-staging
     #winePackages.staging
     #wineWowPackages.staging
