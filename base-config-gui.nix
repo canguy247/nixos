@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, outputs, pkgs, inputs, lib, ... }:
 
 {
 
@@ -15,11 +15,10 @@
     xkbVariant = "";
   };
 
-  unstable-packages = final: _prev: {
-    unstable = import inputs.nixpkgs-unstable {
-      inherit (final) system;
-      config.allowUnfree = true;
-    };
+  nixpkgs = {
+    overlays = [
+      outputs.overlays.unstable-packages
+    ];
   };
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
@@ -30,7 +29,7 @@
     # moved to service in syncthing.nix
     # syncthing
     # syncthingtray
-    pkgs.unstable-orca-slicer
+    pkgs.unstable.orca-slicer
     obsidian
     telegram-desktop
     super-slicer
