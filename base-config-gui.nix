@@ -15,6 +15,13 @@
     xkbVariant = "";
   };
 
+  unstable-packages = final: _prev: {
+    unstable = import inputs.nixpkgs-unstable {
+      inherit (final) system;
+      config.allowUnfree = true;
+    };
+  };
+
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
   # List packages installed in system profile. To search, run:
@@ -23,6 +30,7 @@
     # moved to service in syncthing.nix
     # syncthing
     # syncthingtray
+    pkgs.unstable-orca-slicer
     obsidian
     telegram-desktop
     super-slicer
