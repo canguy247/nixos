@@ -15,11 +15,7 @@
     xkbVariant = "";
   };
 
-  nixpkgs = {
-    overlays = [
-      outputs.overlays.unstable-packages
-    ];
-  };
+  nixpkgs = { overlays = [ outputs.overlays.unstable-packages ]; };
 
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
@@ -48,6 +44,7 @@
     htop
     mako
     wpaperd
+    networkmanagerapplet
 
     font-awesome_5
 
