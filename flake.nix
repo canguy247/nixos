@@ -10,14 +10,14 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ... }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-     overlays = import ./overlays {inherit inputs;};
+      overlays = import ./overlays { inherit inputs; };
 
       nixosConfigurations = {
         nixosDesktop = lib.nixosSystem {
@@ -29,14 +29,14 @@
           modules = [
             ./configuration.nix
             ./modules/syncthing.nix
-            # ./devices/win2.nix
+            # ./devices/win2.nix  #from Wimpy's nix config
             ./modules/steam.nix
             # ./modules/wifi.nix
           ];
         };
         nixosWin2 = lib.nixosSystem {
           inherit system;
-          specialArgs = {inherit inputs outputs;} ;
+          specialArgs = { inherit inputs outputs; };
           modules = [
             ./base-config-tty.nix
             ./base-config-gui.nix
@@ -49,7 +49,7 @@
         };
         nixosWinMax2 = lib.nixosSystem {
           inherit system;
-          specialArgs = {inherit inputs outputs;};
+          specialArgs = { inherit inputs outputs; };
           modules = [
             ./base-config-tty.nix
             ./base-config-gui.nix

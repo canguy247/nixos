@@ -16,16 +16,18 @@
   };
 
   nixpkgs = { overlays = [ outputs.overlays.unstable-packages ]; };
+<<<<<<< Updated upstream
 
+=======
+  # TODO change Electron to the unstable version to get rid of this issue (deprecated version)
+>>>>>>> Stashed changes
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # moved to service in syncthing.nix
-    # syncthing
-    # syncthingtray
     pkgs.unstable.orca-slicer
+
     obsidian
     telegram-desktop
     super-slicer
@@ -48,6 +50,7 @@
 
     font-awesome_5
 
+    # Not sure this is required anymore
     (pkgs.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))

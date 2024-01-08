@@ -11,7 +11,7 @@
 
   networking.hostName = "nixosWinMax2"; # Define your hostname.
   #networking.wireless.enable =
-   # true; # Enables wireless support via wpa_supplicant.
+  # true; # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -34,7 +34,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [ brightnessctl ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
