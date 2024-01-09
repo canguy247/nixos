@@ -45,6 +45,8 @@
     mako
     wpaperd
     networkmanagerapplet
+    copyq
+    wl-clipboard
 
     font-awesome_5
 
