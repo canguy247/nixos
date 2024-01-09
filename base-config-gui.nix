@@ -16,11 +16,9 @@
   };
 
   nixpkgs = { overlays = [ outputs.overlays.unstable-packages ]; };
-<<<<<<< Updated upstream
 
-=======
   # TODO change Electron to the unstable version to get rid of this issue (deprecated version)
->>>>>>> Stashed changes
+
   nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
   # List packages installed in system profile. To search, run:
