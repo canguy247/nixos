@@ -2,23 +2,33 @@
 My NixOS configuration files
 
 Current status:
--early config (~2 weeks in)
+
+-early config (~2 weeks in as of 08JAN2024)
+
 -running on the first 2 devices listed below, the remaining to follow
 
 Road map:
+
 -transition from to dotfiles home-manager as more devices added (I do not want to edit 2 copies)
+
 -complete hyprland configuration
     -fix clipboard (wl-paste)
     -
+
 -install on desktop
     -add olamma
 
 Devices:
+
 -GPD Win 2:                         installed
+
 -GPD Win Max 2 (AMD 6800U):         installed
+
 -Desktop (AMD 3600x GTX 1660ti):    to be installed
 
+
 HomeLab:
+
 -LSCs and VMs to be migrated...TODO Add list here
 
 
