@@ -43,8 +43,9 @@
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
     (pkgs.writeShellScriptBin "my-hello" ''
-      echo "Hello, ${config.home.username}!"
+      echo "Heya, ${config.home.username}!"
     '')
+
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -87,9 +88,11 @@
     enable = true;
     shellAliases = {
       ll = "ls -l ";
+      la = "ls -la ";
       ".." = "cd ..";
       config =
         "/home/methots/.nix-profile/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
+      e = "emacs -nw ";
     };
   };
 

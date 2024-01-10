@@ -22,7 +22,7 @@
 
 ## HomeLab:
 
-- LSCs and VMs to be migrated...TODO Add list here
+- LXCs and VMs to be migrated...TODO Add list here
 
 
 ## Notes for post-install of NixOS:
