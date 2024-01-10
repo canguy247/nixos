@@ -1,58 +1,39 @@
 
-My NixOS configuration files
+# My NixOS configuration files
 
-Current status:
+## Current status:
 
--early config (~2 weeks in as of 08JAN2024)
+- early config (~2 weeks in as of 08JAN2024)
+- running on the first 2 devices listed below, the remaining to follow
 
--running on the first 2 devices listed below, the remaining to follow
+## Road map:
 
-Road map:
-
--transition from to dotfiles home-manager as more devices added (I do not want to edit 2 copies)
-
--complete hyprland configuration
-    -fix clipboard (wl-paste)
-    -
-
--install on desktop
+- transition from to dotfiles home-manager as more devices added (I do not want to edit 2 copies)
+- complete hyprland configuration and move into home-manager declaritive setup
+- install on desktop
     -add olamma
 
-Devices:
+## Devices:
 
--GPD Win 2:                         installed
-
--GPD Win Max 2 (AMD 6800U):         installed
-
--Desktop (AMD 3600x GTX 1660ti):    to be installed
+- GPD Win 2:                         installed
+- GPD Win Max 2 (AMD 6800U):         installed
+- Desktop (AMD 3600x GTX 1660ti):    to be installed
 
 
-HomeLab:
+## HomeLab:
 
--LSCs and VMs to be migrated...TODO Add list here
+- LSCs and VMs to be migrated...TODO Add list here
 
 
- 
+## Notes for post-install of NixOS:
 
-Notes for post-install of NixOS:
-
-run doom install
-
-pull down git bare repository (used until all devices and applicable homelab VMs/LXCs run NixOS)
-
-mv .bashrc .bashrc.bck
-
-rm *.el in doom directory
-
-config checkout
-
-mv .bashrc.bck .bashrc (if required)
-
-run doom sync
-
-check with doom doctor
-
-set up syncthing (just 1 more folder to be added to nix module)
-
-open Obsidian and open vault
+- run doom install
+- pull down git bare repository (used until all devices and applicable homelab VMs/LXCs run NixOS)
+- mv .bashrc .bashrc.bck
+- rm *.el in doom directory
+- config checkout
+- mv .bashrc.bck .bashrc (if required)
+- run doom sync
+- check with doom doctor
+- open Obsidian and open vault
 
