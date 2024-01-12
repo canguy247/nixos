@@ -10,8 +10,10 @@
 
 - transition from to dotfiles home-manager as more devices added (I do not want to edit 2 copies)
 - complete hyprland configuration and move into home-manager declaritive setup
+  - hyprland config files are now copied over by hm, next step is declaritive
 - install on desktop
-    -add olamma
+  - deal with NVidia+Wayland issues
+  - add olamma
 
 ## Devices:
 
