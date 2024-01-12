@@ -45,6 +45,7 @@
     (pkgs.writeShellScriptBin "my-hello" ''
       echo "Heya, ${config.home.username}!"
     '')
+    #(pkgs.writeShellScriptBin "setHostname" "echo $HOSTNAME >> ~/hostname.conf")
 
   ];
 
@@ -61,6 +62,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    #"hostname.conf".text = " ''$hostname = ";
 
   };
   #
