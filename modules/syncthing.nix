@@ -31,6 +31,7 @@
         };
         "Fold4Docs" = { # Name of folder in Syncthing, also the folder ID
           path = "/home/methots/Fold4Docs"; # Which folder to add to Syncthing
+          ID = "oqvr6-3b0qr";
           devices =
             [ "Fold4" "omvrouter" ]; # Which devices to share the folder with
         };

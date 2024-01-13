@@ -110,6 +110,16 @@
     };
   };
 
+  services.kdeconnect = {
+    enable = true;
+    indicator = true;
+  };
+
+  services.nextcloud-client = {
+    enable = true;
+    startInBackground = true;
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
