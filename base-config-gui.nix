@@ -50,6 +50,8 @@
 
     font-awesome_5
 
+    xdg-desktop-portal-hyprland
+
     # Not sure this is required anymore
     (pkgs.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];

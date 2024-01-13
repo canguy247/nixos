@@ -70,7 +70,9 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    #"hostname.conf".text = " ''$hostname = ";
+    #"hostname3.conf".text = ''
+    #  $hostname = ${builtins.getHostName}
+    #'';
 
   };
   #
@@ -86,6 +88,8 @@
   #  /etc/profiles/per-user/methots/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = { EDITOR = "emacs"; };
+
+  programs.gitui = { enable = true; };
 
   programs.git = {
     enable = true;
