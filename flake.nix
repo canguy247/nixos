@@ -42,7 +42,7 @@
             ./base-config-gui.nix
             ./config-nixosWin2.nix
             ./modules/syncthing.nix
-            # ./devices/win2.nix
+            ./devices/win2.nix
             ./modules/steam.nix
             # ./modules/wifi.nix
           ];
