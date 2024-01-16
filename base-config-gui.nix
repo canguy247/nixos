@@ -94,6 +94,8 @@
       ];
   };
 
+  security.pam.services.sddm.enableKwallet = true;
+
   programs.kdeconnect.enable = true;
 
   programs.hyprland.enable = true;
