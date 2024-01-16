@@ -49,6 +49,7 @@
     wl-clipboard
 
     font-awesome_5
+    syncthingtray
 
     xdg-desktop-portal-hyprland
 
