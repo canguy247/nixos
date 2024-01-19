@@ -51,7 +51,7 @@
     # moved to service in syncthing.nix
     # syncthing
     # syncthingtray
-
+    busybox
     #Spotify for tty
     ncspot
 
