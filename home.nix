@@ -111,6 +111,17 @@
     };
   };
 
+  systemd.user.services.emacs = lib.mkIf config.services.emacs.enable {
+    Unit = {
+      After = [ "graphical-session-pre.target" ];
+      PartOf = [ "graphical-session.target" ];
+    };
+
+    Install.WantedBy = lib.mkForce [ "graphical-session.target" ];
+  };
+
+  services.emacs.enable = true;
+
   services.kdeconnect = {
     enable = true;
     indicator = true;
