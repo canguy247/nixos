@@ -19,7 +19,17 @@
     #media-session.enable = true;
   };
 
+  security.pam.services.kwallet = {
+    name = "kwallet";
+    enableKwallet = true;
+  };
+
   boot.supportedFilesystems = [ "ntfs" ];
+  services.emacs = {
+    enable = true;
+    package =
+      pkgs.emacs29; # replace with emacs-gtk, or a version provided by the community overlay if desired.
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.methots = {
@@ -44,7 +54,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    emacs29
+    # emacs29
     wget
     git
     curl

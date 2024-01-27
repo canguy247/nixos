@@ -107,7 +107,7 @@
       cfgui = "gitui -d /home/methots/.cfg/ -w ~/";
       config =
         "/home/methots/.nix-profile/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
-      e = "emacs -nw ";
+      e = "emacsclient -c -a 'emacs' ";
     };
   };
 
