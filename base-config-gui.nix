@@ -80,7 +80,12 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  hardware.opengl.enable = true;
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
 
   networking.firewall = {
     enable = true;
