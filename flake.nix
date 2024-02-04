@@ -22,6 +22,7 @@
       nixosConfigurations = {
         nixosDesktop = lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit inputs outputs; };  
           modules = [
             ./base-config-tty.nix
             ./base-config-gui.nix

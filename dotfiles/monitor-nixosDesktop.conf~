@@ -1,0 +1,4 @@
+# Monitor options for the GPD Win Max 2
+monitor=eDP-1, preferred, 0x0, 1
+monitor=eDP-2, preferred,, 2
+monitor=HDMI-A-1, preferred

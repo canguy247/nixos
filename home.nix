@@ -61,11 +61,10 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     ".config/hypr/hyprland.conf".source = dotfiles/hyprland.conf;
-    ".config/hypr/monitor-nixosWin2.conf".source =
-      dotfiles/monitor-nixosWin2.conf;
-    ".config/hypr/monitor-nixosWinMax2.conf".source =
-      dotfiles/monitor-nixosWinMax2.conf;
-    # # You can also set the file content immediately.
+    ".config/hypr/monitor-nixosWin2.conf".source =    dotfiles/monitor-nixosWin2.conf;
+    ".config/hypr/monitor-nixosWinMax2.conf".source = dotfiles/monitor-nixosWinMax2.conf;
+    ".config/hypr/monitor-nixosDesktop.conf".source = dotfiles/monitor-nixosDesktop.conf;
+      # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
