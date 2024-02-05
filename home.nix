@@ -16,10 +16,10 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   # Hackie fix for Obsidian
-  #  home.sessionVariables = rec {
-  #    LD_LIBRARY_PATH =
-  #      "$(nix build --print-out-paths --no-link nixpkgs#libGL)/lib";
-  #  };
+  home.sessionVariables = rec {
+    LD_LIBRARY_PATH =
+      "$(nix build --print-out-paths --no-link nixpkgs#libGL)/lib";
+  };
 
   #  imports = [ ./syncthingHome.nix ];
 
@@ -61,10 +61,13 @@
     # ".screenrc".source = dotfiles/screenrc;
 
     ".config/hypr/hyprland.conf".source = dotfiles/hyprland.conf;
-    ".config/hypr/monitor-nixosWin2.conf".source =    dotfiles/monitor-nixosWin2.conf;
-    ".config/hypr/monitor-nixosWinMax2.conf".source = dotfiles/monitor-nixosWinMax2.conf;
-    ".config/hypr/monitor-nixosDesktop.conf".source = dotfiles/monitor-nixosDesktop.conf;
-      # # You can also set the file content immediately.
+    ".config/hypr/monitor-nixosWin2.conf".source =
+      dotfiles/monitor-nixosWin2.conf;
+    ".config/hypr/monitor-nixosWinMax2.conf".source =
+      dotfiles/monitor-nixosWinMax2.conf;
+    ".config/hypr/monitor-nixosDesktop.conf".source =
+      dotfiles/monitor-nixosDesktop.conf;
+    # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
