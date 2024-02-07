@@ -86,7 +86,6 @@
     driSupport32Bit = true;
   };
 
-
   networking.firewall = {
     enable = true;
     allowedTCPPortRanges = [{
@@ -101,7 +100,10 @@
       ];
   };
 
-  security.pam.services.sddm.enableKwallet = true;
+  security.pam.services.kwallet = {
+    name = "kwallet";
+    enableKwallet = true;
+  };
 
   programs.kdeconnect.enable = true;
 

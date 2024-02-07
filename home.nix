@@ -109,7 +109,7 @@
       cfgui = "gitui -d /home/methots/.cfg/ -w ~/";
       config =
         "/home/methots/.nix-profile/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
-      e = "emacsclient -c -a 'emacs' ";
+      e = "emacs ";
     };
   };
 
@@ -121,8 +121,6 @@
 
     Install.WantedBy = lib.mkForce [ "graphical-session.target" ];
   };
-
-  services.emacs.enable = true;
 
   services.kdeconnect = {
     enable = true;
