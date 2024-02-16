@@ -20,7 +20,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  environment.variables.WLR_NO_HARDWARE_CURSORS = "1";
+  # I do not think we need this any longer...NVidia only
+  #  environment.variables.WLR_NO_HARDWARE_CURSORS = "1";
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
