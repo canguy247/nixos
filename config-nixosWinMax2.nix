@@ -29,6 +29,28 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  systemd.services.xr-linux-driver = {
+    enable = true;
+    description = "xr-linux-driver";
+    after = [ "network.target" ];
+
+    serviceConfig = {
+      Type = "simple";
+      Environment = "HOME=/home/methots";
+      ExecStart =
+        #"/nix/store/j3rf49f3b06cni2ynyrz94alqmhp6z3d-xr-linux-driver-0.6.1-beta/bin/xrealAirLinuxDriver";
+        #"/home/methots/NixBuilds/XRDriver/result/bin/xrealAirLinuxDriver";
+        "/nix/store/v0ah4vnqcvkr79zgzv6qhg3hy0q26kq3-xr-linux-driver-0.6.1-beta/bin/xrealAirLinuxDriver";
+      Restart = "on-failure";
+      PrivateNetwork = "true";
+      # PrivateTmp = "true";
+    };
+
+    wantedBy = [ "multi-user.target" ];
+  };
+
+  boot.kernelModules = [ "uinput" ];
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
