@@ -28,6 +28,7 @@
   environment.systemPackages = with pkgs; [
     pkgs.unstable.orca-slicer
 
+    vlc
     obsidian
     telegram-desktop
     super-slicer
