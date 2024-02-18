@@ -29,6 +29,7 @@
     pkgs.unstable.orca-slicer
 
     vlc
+    handbrake
     obsidian
     telegram-desktop
     super-slicer
