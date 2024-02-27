@@ -3,23 +3,20 @@
 
 ## Current status:
 
-- early config (~2 weeks in as of 08JAN2024)
-- running on the first 2 devices listed below, the remaining to follow
+- NixOS running all 3 devices listed below
+- TODO: migrate server LXC's and VMs to NixOS (NixOPS or Deploy-RS)
 
 ## Road map:
 
-- transition from to dotfiles home-manager as more devices added (I do not want to edit 2 copies)
+- transition from to dotfiles home-manager. In progress, Doom Emacs next on list
 - complete hyprland configuration and move into home-manager declaritive setup
-  - hyprland config files are now copied over by hm, next step is declaritive
-- install on desktop
-  - deal with NVidia+Wayland issues
-  - add olamma
+  - hyprland config files are now copied over by hm, next step is declaritive (optional)
 
 ## Devices:
 
 - GPD Win 2:                         installed
 - GPD Win Max 2 (AMD 6800U):         installed
-- Desktop (AMD 3600x GTX 1660ti):    to be installed
+- Desktop (AMD 3600x w/ AMD Vega 56):    installed
 
 
 ## HomeLab:
@@ -34,7 +31,6 @@
 - mv .bashrc .bashrc.bck
 - rm *.el in doom directory
 - config checkout
-- mv .bashrc.bck .bashrc (if required)
 - run doom sync
 - check with doom doctor
 - open Obsidian and open vault
