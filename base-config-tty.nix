@@ -83,6 +83,8 @@
     shellcheck
     rnix-lsp
 
+    fzf
+
     gitui
   ];
 

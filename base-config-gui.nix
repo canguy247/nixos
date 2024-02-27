@@ -28,6 +28,7 @@
   environment.systemPackages = with pkgs; [
     pkgs.unstable.orca-slicer
 
+    onlyoffice-bin
     vlc
     handbrake
     obsidian
