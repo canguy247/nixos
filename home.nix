@@ -103,9 +103,10 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      l = "ls -lah ";
-      ll = "ls -l ";
-      la = "ls -la ";
+      l = "eza -lah ";
+      ll = "eza -l ";
+      la = "eza -la ";
+      cat = "bat --paging=never ";
       ".." = "cd ..";
       cfgui = "gitui -d /home/methots/.cfg/ -w ~/";
       config =
