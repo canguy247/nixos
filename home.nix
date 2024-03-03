@@ -133,6 +133,36 @@
     startInBackground = true;
   };
 
+  services.kanshi = {
+    enable = true;
+    # systemdTarget = "hyprland-session-target";
+    systemdTarget = "";
+    profiles = {
+      undocked = {
+        outputs = [{
+          criteria = "Japan Display Inc. GPD1001H 0x00000001";
+          scale = 2.0;
+          status = "enable";
+        }];
+      };
+      xReal = {
+        outputs = [
+          {
+            criteria = "Japan Display Inc. GPD1001H 0x00000001";
+            status = "disable";
+          }
+          {
+            criteria = "Nreal Air 0x66666600";
+            scale = 1.0;
+            status = "enable";
+          }
+        ];
+      };
+
+    };
+
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
