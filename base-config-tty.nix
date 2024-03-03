@@ -60,6 +60,12 @@
     #Spotify for tty
     ncspot
 
+    #Terminal utilities
+    fzf
+    du-dust
+    bat
+    eza
+
     # Emacs requirements
     ripgrep
     fd

@@ -37,7 +37,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [ g810-led ];
 
   # services.xserver.videoDrivers = ["nvidia"];
 
