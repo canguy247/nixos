@@ -115,15 +115,6 @@
     };
   };
 
-  systemd.user.services.emacs = lib.mkIf config.services.emacs.enable {
-    Unit = {
-      After = [ "graphical-session-pre.target" ];
-      PartOf = [ "graphical-session.target" ];
-    };
-
-    Install.WantedBy = lib.mkForce [ "graphical-session.target" ];
-  };
-
   services.kdeconnect = {
     enable = true;
     indicator = true;
@@ -145,6 +136,28 @@
           scale = 2.0;
           status = "enable";
         }];
+      };
+      desktopDockWM2 = {
+        outputs = [
+          {
+            criteria = "Japan Display Inc. GPD1001H 0x00000001";
+            status = "disable";
+          }
+          {
+            criteria = "Acer Technologies Acer ET322QR 0x91903CC3";
+            position = "0,0";
+            scale = 1.0;
+            status = "enable";
+            mode = "1920x1080@60Hz";
+          }
+          {
+            criteria = "LG Electronics LG TV 0x01010101";
+            position = "1920,0";
+            scale = 1.0;
+            status = "enable";
+            mode = "1920x1080@60Hz";
+          }
+        ];
       };
       xReal = {
         outputs = [
