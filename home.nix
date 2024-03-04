@@ -67,6 +67,35 @@
       dotfiles/monitor-nixosWinMax2.conf;
     ".config/hypr/monitor-nixosDesktop.conf".source =
       dotfiles/monitor-nixosDesktop.conf;
+
+    ".config/alacritty/alacritty.toml".source = dotfiles/alacritty.toml;
+
+    ".config/doom/config.el".source = dotfiles/config.el;
+    ".config/doom/init.el".source = dotfiles/init.el;
+    ".config/doom/packages.el".source = dotfiles/packages.el;
+
+    ".config/hypr/scripts/lock.sh".source = dotfiles/lock.sh;
+    ".config/hypr/scripts/sleep.sh".source = dotfiles/sleep.sh;
+
+    ".config/nwg-bar/bar.json".source = dotfiles/bar.json;
+    ".config/nwg-bar/style.css".source = dotfiles/style.css;
+
+    ".config/waybar/config".source = dotfiles/waybar/config;
+    ".config/waybar/style.css".source = dotfiles/waybar/style.css;
+    ".config/waybar/scripts/OCV".source = dotfiles/waybar/scripts/OCV;
+    ".config/waybar/scripts/backlight-hint.sh".source =
+      dotfiles/waybar/scripts/backlight-hint.sh;
+    ".config/waybar/scripts/check_updates.sh".source =
+      dotfiles/waybar/scripts/check_updates.sh;
+    ".config/waybar/scripts/cleanup_after_start.sh".source =
+      dotfiles/waybar/scripts/cleanup_after_start.sh;
+    ".config/waybar/scripts/keyhint.sh".source =
+      dotfiles/waybar/scripts/keyhint.sh;
+    ".config/waybar/scripts/network_traffic.sh".source =
+      dotfiles/waybar/scripts/network_traffic.sh;
+
+    ".config/wpaperd/wallpaper.toml".source = dotfiles/wallpaper.toml;
+
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
