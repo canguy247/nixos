@@ -32,6 +32,17 @@
           ];
 
         };
+        nixosBenchtop = lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs outputs; };  
+          modules = [
+            ./base-config-tty.nix
+            ./base-config-gui.nix
+            ./config-nixosBenchtop.nix
+            ./modules/syncthing.nix
+            ./modules/steam.nix
+          ];
+        };
         nixosWin2 = lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs outputs; };
