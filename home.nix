@@ -67,6 +67,8 @@
       dotfiles/monitor-nixosWinMax2.conf;
     ".config/hypr/monitor-nixosDesktop.conf".source =
       dotfiles/monitor-nixosDesktop.conf;
+    ".config/hypr/monitor-nixosBenchtop.conf".source =
+      dotfiles/monitor-nixosBenchtop.conf;
 
     ".config/alacritty/alacritty.toml".source = dotfiles/alacritty.toml;
 
