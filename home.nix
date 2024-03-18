@@ -143,6 +143,10 @@
       config =
         "/home/methots/.nix-profile/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
       e = "emacs -nw ";
+      ec = ''
+        cd /home/methots/.dotfiles
+        emacs -nw
+      '';
     };
   };
 
