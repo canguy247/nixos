@@ -26,6 +26,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    lxqt.lxqt-policykit
+
     pkgs.unstable.orca-slicer
 
     onlyoffice-bin
