@@ -160,6 +160,16 @@
       symbol = "ﰬ";
       style = "bright-red bold";
     };
+    character = {
+      format = "$symbol ";
+      success_symbol = "[❯](bold green)";
+      error_symbol = "[❯](bold red)";
+      vimcmd_symbol = "[❮](bold green)";
+      vimcmd_visual_symbol = "[❮](bold yellow)";
+      vimcmd_replace_symbol = "[❮](bold purple)";
+      vimcmd_replace_one_symbol = "[❮](bold purple)";
+      disabled = false;
+    };
     shell = {
       disabled = false;
       format = "$indicator";
@@ -172,11 +182,18 @@
       style_root = "bright-red bold";
     };
     git_branch = {
-      symbol = "";
+      symbol = ":";
       format = "[$symbol$branch(:$remote_branch) ]($style)";
-      ignore_branches = "master";
+      # ignore_branches = [ "master" "main" ];
     };
-    git_metrics = { disabled = false; };
+    git_metrics = {
+      added_style = "bold green";
+      deleted_style = "bold red";
+      only_nonzero_diffs = true;
+      format = "([+$added]($added_style) )([-$deleted]($deleted_style) )";
+      disabled = true;
+      ignore_submodules = false;
+    };
     git_status = { format = "([$all_status$ahead_behind]($style) )"; };
   };
 
