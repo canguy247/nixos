@@ -194,9 +194,9 @@
       disabled = true;
       ignore_submodules = false;
     };
-    git_status = { format = "([$all_status$ahead_behind]($style) )"; };
+    #    git_status = { format = "([$all_status$ahead_behind]($style) )"; };
     git_status = {
-      format = "([[$all_status$ahead_behind]]($style) )";
+      format = "([$all_status$ahead_behind]($style) )";
       style = "red bold";
       stashed = "$";
       ahead = "⇡";
