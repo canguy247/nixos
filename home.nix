@@ -164,13 +164,20 @@
       disabled = false;
       format = "$indicator";
       fish_indicator = "";
-      bash_indicator = "[BASH](bright-white) ";
+      bash_indicator = "🚀 ";
       zsh_indicator = "[ZSH](bright-white) ";
     };
     username = {
       style_user = "bright-white bold";
       style_root = "bright-red bold";
     };
+    git_branch = {
+      symbol = "";
+      format = "[$symbol$branch(:$remote_branch) ]($style)";
+      ignore_branches = "master";
+    };
+    git_metrics = { disabled = false; };
+    git_status = { format = "([$all_status$ahead_behind]($style) )"; };
   };
 
   # # export PS1='\w $(__git_ps1 "(%s) ")$ '
