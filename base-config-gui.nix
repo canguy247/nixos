@@ -25,6 +25,12 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  fonts.packages = with pkgs; [
+    fira-code
+    fira-code-symbols
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
   environment.systemPackages = with pkgs; [
     lxqt.lxqt-policykit
 
@@ -54,7 +60,6 @@
     networkmanagerapplet
     copyq
     wl-clipboard
-
     font-awesome_5
     syncthingtray
 
