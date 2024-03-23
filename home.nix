@@ -156,7 +156,7 @@
   programs.starship.settings = {
     add_newline = true;
     format =
-      "[░▒▓](#a3aed2)[  ](bg:#a3aed2 fg:#090c0c)[](bg:#769ff0 fg:#a3aed2)$directory[](fg:#769ff0 bg:#394260)$git_branch$git_commit$git_state$git_status[](fg:#394260 bg:#212736)$time[ ](fg:#1d2230)$character";
+      "[░▒▓](#a3aed2)[  ](bg:#a3aed2 fg:#090c0c)[](bg:#769ff0 fg:#a3aed2)$directory[](fg:#769ff0 bg:#394260)$git_branch$git_commit$git_state$git_status[](fg:#394260 bg:#212736)$rust$golang$php[](fg:#212736 bg:#1d2230)$time[ ](fg:#1d2230)$character";
     #      "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
     shlvl = {
       disabled = false;
@@ -228,6 +228,11 @@
       typechanged = "";
       ignore_submodules = false;
       disabled = false;
+    };
+    rust = {
+      symbol = "";
+      style = "bg:#212736";
+      format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
     };
   };
 
