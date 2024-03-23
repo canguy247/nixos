@@ -148,7 +148,38 @@
         emacs -nw
       '';
     };
+
   };
+  programs.starship.enable = true;
+  programs.starship.settings = {
+    add_newline = false;
+    format =
+      "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
+    shlvl = {
+      disabled = false;
+      symbol = "ﰬ";
+      style = "bright-red bold";
+    };
+    shell = {
+      disabled = false;
+      format = "$indicator";
+      fish_indicator = "";
+      bash_indicator = "[BASH](bright-white) ";
+      zsh_indicator = "[ZSH](bright-white) ";
+    };
+    username = {
+      style_user = "bright-white bold";
+      style_root = "bright-red bold";
+    };
+  };
+
+  # # export PS1='\w $(__git_ps1 "(%s) ")$ '
+  # # nf-linux-nixos\udb84\udd05󱄅f1105
+  # initExtra = ''
+  #   source ~/.nix-profile/share/git/contrib/completion/git-prompt.sh
+  #   OS_ICON=\313
+  #   PS1="\n \[\033[0;34m\]╭─────\[\033[0;31m\]\[\033[0;37m\]\[\033[41m\] $OS_ICON "T" \[\033[0m\]\[\033[0;31m\]\[\033[0;34m\]─────\[\033[0;32m\]\[\033[0;30m\]\[\033[42m\] \w \[\033[0m\]\[\033[0;32m\] \n \[\033[0;34m\]╰ \[\033[1;36m\]\$ \[\033[0m\]"
+  # '';
 
   services.kdeconnect = {
     enable = true;
