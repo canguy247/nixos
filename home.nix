@@ -32,6 +32,7 @@
 
     pkgs.git
     pkgs.nixfmt
+    pkgs.neofetch
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -133,6 +134,7 @@
 
   programs.bash = {
     enable = true;
+    initExtra = "neofetch";
     shellAliases = {
       l = "eza -lah ";
       ll = "eza -l ";
@@ -152,22 +154,20 @@
   };
   programs.starship.enable = true;
   programs.starship.settings = {
-    add_newline = false;
+    add_newline = true;
     format =
       "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
     shlvl = {
       disabled = false;
-      symbol = "ﰬ";
+      symbol = "▶";
       style = "bright-red bold";
     };
     character = {
-      format = "$symbol ";
-      success_symbol = "[❯](bold green)";
-      error_symbol = "[❯](bold red)";
-      vimcmd_symbol = "[❮](bold green)";
-      vimcmd_visual_symbol = "[❮](bold yellow)";
-      vimcmd_replace_symbol = "[❮](bold purple)";
-      vimcmd_replace_one_symbol = "[❮](bold purple)";
+      format = ''
+
+        $symbol '';
+      success_symbol = "[▶](bold green)";
+      error_symbol = "[✗](bold red)";
       disabled = false;
     };
     shell = {
@@ -177,6 +177,7 @@
       bash_indicator = "🚀 ";
       zsh_indicator = "[ZSH](bright-white) ";
     };
+    directory = { truncation_length = 5; };
     username = {
       style_user = "bright-white bold";
       style_root = "bright-red bold";
