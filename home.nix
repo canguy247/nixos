@@ -195,6 +195,24 @@
       ignore_submodules = false;
     };
     git_status = { format = "([$all_status$ahead_behind]($style) )"; };
+    git_status = {
+      format = "([[$all_status$ahead_behind]]($style) )";
+      style = "red bold";
+      stashed = "$";
+      ahead = "⇡";
+      behind = "⇣";
+      up_to_date = "";
+      diverged = "⇕";
+      conflicted = "=";
+      deleted = "✘";
+      renamed = "»";
+      modified = "!";
+      staged = "+";
+      untracked = "?";
+      typechanged = "";
+      ignore_submodules = false;
+      disabled = false;
+    };
   };
 
   # # export PS1='\w $(__git_ps1 "(%s) ")$ '
