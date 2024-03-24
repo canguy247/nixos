@@ -155,8 +155,9 @@
   programs.starship.enable = true;
   programs.starship.settings = {
     add_newline = true;
-    format =
-      "[░▒▓](#a3aed2)[  ](bg:#a3aed2 fg:#090c0c)[](bg:#769ff0 fg:#a3aed2)$directory[](fg:#769ff0 bg:#394260)$git_branch$git_commit$git_state$git_status[](fg:#394260 bg:#212736)$rust$golang$php[](fg:#212736 bg:#1d2230)$time[ ](fg:#1d2230)$character";
+    format = ''
+      [░▒▓](#a3aed2)[  ](bg:#a3aed2 fg:#090c0c)[](bg:#769ff0 fg:#a3aed2)$directory[](fg:#769ff0 bg:#394260)$git_branch$git_commit$git_state$git_status[](fg:#394260 bg:#212736)$rust$golang$php[](fg:#212736 bg:#1d2230)$time[ ](fg:#1d2230)
+      $cmd_duration$character'';
     #      "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
     shlvl = {
       disabled = false;
@@ -164,21 +165,17 @@
       style = "bright-red bold";
     };
     character = {
-      format = ''
-
-        $symbol '';
+      format = "$symbol";
       success_symbol = "[▶](bold green)";
       error_symbol = "[✗](bold red)";
       disabled = false;
     };
-    # NixOS = " "" "
-    # Linux = " "
-    #" "
-    #󰌾
-    #󰍛
-    #
-    #
-    #
+    # NixOS     Lock 󰌾 Chip 󰍛 Linux 
+    cmd_duration = {
+      min_time = 3000;
+      format =
+        "[░▒▓](#a3aed2)[ 🕙 $duration](bg:#a3aed2 fg:#090c0c)[](fg:#a3aed2 bg:#090c0c)";
+    };
     time = {
       disabled = false;
       time_format = "%R"; # Hour:Minute Format
@@ -222,7 +219,7 @@
       conflicted = "=";
       deleted = "✘";
       renamed = "»";
-      modified = "!";
+      modified = "[!](fg:bold red bg:#394260)";
       staged = "+";
       untracked = "?";
       typechanged = "";
@@ -231,6 +228,16 @@
     };
     rust = {
       symbol = "";
+      style = "bg:#212736";
+      format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+    };
+    golang = {
+      symbol = "";
+      style = "bg:#212736";
+      format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+    };
+    php = {
+      symbol = "";
       style = "bg:#212736";
       format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
     };
