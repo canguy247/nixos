@@ -124,8 +124,6 @@
   #
   home.sessionVariables = { EDITOR = "emacs"; };
 
-  programs.gitui = { enable = true; };
-
   programs.git = {
     enable = true;
     userName = "Sean Methot";
@@ -142,7 +140,6 @@
       la = "eza -la ";
       cat = "bat --paging=never ";
       ".." = "cd ..";
-      cfgui = "gitui -d /home/methots/.cfg/ -w ~/";
       config =
         "/home/methots/.nix-profile/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
       e = "emacs -nw ";
