@@ -91,6 +91,7 @@
 
     fzf
 
+    git-crypt
     gitui
   ];
 

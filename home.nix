@@ -150,6 +150,16 @@
         cd /home/methots/.dotfiles
         emacs -nw
       '';
+      nrs = ''
+        pushd ~/.dotfiles
+        sudo nixos-rebuild switch --flake .
+        popd
+      '';
+      hmr = ''
+        pushd ~/.dotfiles
+        home-manager switch --flake .
+        popd
+      '';
     };
 
   };
