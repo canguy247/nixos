@@ -92,7 +92,6 @@
     fzf
 
     git-crypt
-    gitui
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
