@@ -99,6 +99,7 @@
 
     ".config/wpaperd/wallpaper.toml".source = dotfiles/wallpaper.toml;
 
+    ".ssh/config".source = dotfiles/sshconfig;
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
