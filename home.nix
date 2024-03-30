@@ -76,6 +76,7 @@
     ".config/doom/config.el".source = dotfiles/config.el;
     ".config/doom/init.el".source = dotfiles/init.el;
     ".config/doom/packages.el".source = dotfiles/packages.el;
+    ".config/doom/aikey.el".source = dotfiles/aikey.el.secret;
 
     ".config/hypr/scripts/lock.sh".source = dotfiles/lock.sh;
     ".config/hypr/scripts/sleep.sh".source = dotfiles/sleep.sh;
