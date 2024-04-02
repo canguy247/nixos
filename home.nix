@@ -134,7 +134,6 @@
 
   programs.bash = {
     enable = true;
-    initExtra = "neofetch";
     shellAliases = {
       l = "eza -lah ";
       ll = "eza -l ";
@@ -143,11 +142,10 @@
       ".." = "cd ..";
       config =
         "/home/methots/.nix-profile/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
-      e = "emacs -nw ";
-      ec = ''
-        cd /home/methots/.dotfiles
-        emacs -nw
-      '';
+      # ec = ''
+      #   cd /home/methots/.dotfiles
+      #   emacs -nw
+      # '';
       nrs = ''
         pushd ~/.dotfiles
         sudo nixos-rebuild switch --flake .
@@ -159,6 +157,27 @@
         popd
       '';
     };
+    initExtra = ''
+      "neofetch"
+      ec () {
+        cd /home/methots/.dotfiles
+        emacs -nw "$1"
+      }
+      e () {
+        emacs -nw "$1"
+      }
+      si () {
+        neofetch
+        echo "---Memory Usage:"
+        /run/current-system/sw/bin/free -h
+
+        echo "---Disk Usage:"
+        /run/current-system/sw/bin/df -h /dev/disk/by-uuid/* 2>/dev/null
+
+        echo "---Current Uptime:"
+        /run/current-system/sw/bin/uptime
+      }
+    '';
 
   };
   programs.starship.enable = true;
