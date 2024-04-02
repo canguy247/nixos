@@ -161,10 +161,21 @@
       "neofetch"
       ec () {
         cd /home/methots/.dotfiles
-        emacs -nw "$1"
+        if [ "$#" -eq 0  ]
+        then
+          emacs -nw
+        else
+          emacs -nw "$1"
+        fi
       }
       e () {
-        emacs -nw "$1"
+        cd /home/methots/.dotfiles
+        if [ "$#" -eq 0  ]
+        then
+          emacs -nw
+        else
+          emacs -nw "$1"
+        fi
       }
       si () {
         neofetch
