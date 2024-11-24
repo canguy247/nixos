@@ -136,6 +136,155 @@
 
   };
 
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      l = "eza -lah ";
+      ll = "eza -l ";
+      la = "eza -la ";
+      cat = "bat --paging=never ";
+      ".." = "cd ..";
+      config =
+        "/home/methots/.nix-profile/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME";
+      # ec = ''
+      #   cd /home/methots/.dotfiles
+      #   emacs -nw
+      # '';
+      nrs = ''
+        pushd ~/.dotfiles
+        sudo nixos-rebuild switch --flake .
+        popd
+      '';
+      hmr = ''
+        pushd ~/.dotfiles
+        home-manager switch --flake .
+        popd
+      '';
+    };
+    initExtra = ''
+      "neofetch"
+      ec () {
+        cd /home/methots/.dotfiles
+        if [ "$#" -eq 0  ]
+        then
+          emacs -nw
+        else
+          emacs -nw "$1"
+        fi
+      }
+      e () {
+        if [ "$#" -eq 0  ]
+        then
+          emacs -nw
+        else
+          emacs -nw "$1"
+        fi
+      }
+      si () {
+        neofetch
+        echo "---Memory Usage:"
+        /run/current-system/sw/bin/free -h
+
+        echo "---Disk Usage:"
+        /run/current-system/sw/bin/df -h /dev/disk/by-uuid/* 2>/dev/null
+
+        echo "---Current Uptime:"
+        /run/current-system/sw/bin/uptime
+      }
+    '';
+
+  };
+  programs.starship.enable = true;
+  programs.starship.settings = {
+    add_newline = true;
+    format = ''
+      [░▒▓](#a3aed2)[  ](bg:#a3aed2 fg:#090c0c)[](bg:#769ff0 fg:#a3aed2)$directory[](fg:#769ff0 bg:#394260)$git_branch$git_commit$git_state$git_status[](fg:#394260 bg:#212736)$rust$golang$php[](fg:#212736 bg:#1d2230)$time[ ](fg:#1d2230)
+      $cmd_duration$character'';
+    #      "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
+    shlvl = {
+      disabled = false;
+      symbol = "▶";
+      style = "bright-red bold";
+    };
+    character = {
+      format = "$symbol";
+      success_symbol = "[▶](bold green)";
+      error_symbol = "[✗](bold red)";
+      disabled = false;
+    };
+    # NixOS     Lock 󰌾 Chip 󰍛 Linux 
+    cmd_duration = {
+      min_time = 3000;
+      format =
+        "[░▒▓](#a3aed2)[ 🕙 $duration](bg:#a3aed2 fg:#090c0c)[](fg:#a3aed2 bg:#090c0c)";
+    };
+    time = {
+      disabled = false;
+      time_format = "%R"; # Hour:Minute Format
+      style = "bg:#1d2230";
+      format = "[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)";
+    };
+    directory = {
+      truncation_length = 5;
+      style = "fg:#e3e5e5 bg:#769ff0";
+      format = "[ $path ]($style)";
+    };
+    username = {
+      style_user = "bright-white bold";
+      style_root = "bright-red bold";
+    };
+    git_branch = {
+      symbol = ":";
+      style = "bg:#394260";
+      format = "[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)";
+      #[$symbol$branch(:$remote_branch) ]($style)";
+      # ignore_branches = [ "master" "main" ];
+    };
+    git_metrics = {
+      added_style = "bold green";
+      deleted_style = "bold red";
+      only_nonzero_diffs = true;
+      format = "([+$added]($added_style) )([-$deleted]($deleted_style) )";
+      disabled = true;
+      ignore_submodules = false;
+    };
+    #    git_status = { format = "([$all_status$ahead_behind]($style) )"; };
+    git_status = {
+      format = "[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)";
+      #([$all_status$ahead_behind]($style) )";
+      style = "bg:#394260";
+      stashed = "$";
+      ahead = "⇡";
+      behind = "⇣";
+      up_to_date = "";
+      diverged = "⇕";
+      conflicted = "=";
+      deleted = "✘";
+      renamed = "»";
+      modified = "[!](fg:bold red bg:#394260)";
+      staged = "+";
+      untracked = "?";
+      typechanged = "";
+      ignore_submodules = false;
+      disabled = false;
+    };
+    rust = {
+      symbol = "";
+      style = "bg:#212736";
+      format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+    };
+    golang = {
+      symbol = "";
+      style = "bg:#212736";
+      format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+    };
+    php = {
+      symbol = "";
+      style = "bg:#212736";
+      format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+    };
+  };
+
   # # export PS1='\w $(__git_ps1 "(%s) ")$ '
   # # nf-linux-nixos\udb84\udd05󱄅f1105
   # initExtra = ''
@@ -152,6 +301,58 @@
   services.nextcloud-client = {
     enable = true;
     startInBackground = true;
+  };
+
+  services.kanshi = {
+    enable = true;
+    # systemdTarget = "hyprland-session-target";
+    systemdTarget = "";
+    profiles = {
+      undocked = {
+        outputs = [{
+          criteria = "Japan Display Inc. GPD1001H 0x00000001";
+          scale = 2.0;
+          status = "enable";
+        }];
+      };
+      desktopDockWM2 = {
+        outputs = [
+          {
+            criteria = "Japan Display Inc. GPD1001H 0x00000001";
+            status = "disable";
+          }
+          {
+            criteria = "Acer Technologies Acer ET322QR 0x91903CC3";
+            position = "0,0";
+            scale = 1.0;
+            status = "enable";
+            mode = "1920x1080@60Hz";
+          }
+          {
+            criteria = "LG Electronics LG TV 0x01010101";
+            position = "1920,0";
+            scale = 1.0;
+            status = "enable";
+            mode = "1920x1080@60Hz";
+          }
+        ];
+      };
+      xReal = {
+        outputs = [
+          {
+            criteria = "Japan Display Inc. GPD1001H 0x00000001";
+            status = "disable";
+          }
+          {
+            criteria = "Nreal Air 0x66666600";
+            scale = 1.0;
+            status = "enable";
+          }
+        ];
+      };
+
+    };
+
   };
 
   # Let Home Manager install and manage itself.
