@@ -87,7 +87,7 @@
     rustc
     shfmt
     shellcheck
-    #rnix-lsp
+    rnix-lsp
 
     fzf
 

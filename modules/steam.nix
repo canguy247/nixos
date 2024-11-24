@@ -25,7 +25,7 @@
     #winePackages.staging
     #wineWowPackages.staging
     #winetricks
-    #    minecraft
+    minecraft
     quakespasm
   ];
 }
