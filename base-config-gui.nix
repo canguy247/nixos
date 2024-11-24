@@ -34,14 +34,14 @@
   environment.systemPackages = with pkgs; [
     lxqt.lxqt-policykit
 
-    pkgs.unstable.orca-slicer
+    orca-slicer
 
     onlyoffice-bin
     vlc
     handbrake
     obsidian
     telegram-desktop
-    super-slicer
+    #  super-slicer
     prusa-slicer
     nextcloud-client
     arduino
