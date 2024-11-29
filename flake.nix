@@ -3,9 +3,9 @@
   description = "My First Flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
@@ -22,7 +22,7 @@
       nixosConfigurations = {
         nixosDesktop = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs outputs; };  
+          specialArgs = { inherit inputs outputs; };
           modules = [
             ./base-config-tty.nix
             ./base-config-gui.nix
@@ -34,7 +34,7 @@
         };
         nixosBenchtop = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs outputs; };  
+          specialArgs = { inherit inputs outputs; };
           modules = [
             ./base-config-tty.nix
             ./base-config-gui.nix
