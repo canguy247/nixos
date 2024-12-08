@@ -82,6 +82,7 @@
     pipenv
     python311Packages.nose
     python311Packages.pytest
+    python311Packages.pylsp-mypy
     rust-analyzer
     cargo
     rustc
