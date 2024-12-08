@@ -36,6 +36,7 @@
 
     orca-slicer
 
+    moonlight-qt
     onlyoffice-bin
     vlc
     handbrake
