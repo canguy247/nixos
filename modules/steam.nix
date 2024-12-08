@@ -21,6 +21,7 @@
     vulkan-loader
     vulkan-headers
     heroic
+    lutris
     #wine-staging
     #winePackages.staging
     #wineWowPackages.staging
