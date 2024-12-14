@@ -56,6 +56,11 @@
             # ./modules/wifi.nix
           ];
         };
+        nixosLXC = lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./base-config-tty.nix ./modules/syncthing.nix ];
+        };
         nixosWinMax2 = lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs outputs; };
