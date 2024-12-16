@@ -83,6 +83,7 @@
     python311Packages.nose
     python311Packages.pytest
     python311Packages.pylsp-mypy
+    pyright
     rust-analyzer
     cargo
     rustc
