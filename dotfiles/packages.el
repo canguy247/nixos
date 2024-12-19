@@ -10,8 +10,8 @@
                                         ;(package! some-package)
 (package! harpoon)
 (package! gptel)
-(package! codeium :recipe (:host github :repo "Exafunction/codeium.el"))
-
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("dist" "*.el")))
 (package! gptel-extensions :recipe (:host github :repo "kamushadenes/gptel-extensions.el"))
 
 ;; To install a package directly from a remote git repo, you must specify a

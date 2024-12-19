@@ -66,6 +66,9 @@
     bat
     eza
 
+    # for Co-Pilot:
+    nodejs_22
+
     # Emacs requirements
     ripgrep
     fd
