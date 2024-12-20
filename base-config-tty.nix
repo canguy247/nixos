@@ -92,6 +92,7 @@
     rustc
     shfmt
     shellcheck
+    ispell
     # rnix-lsp
 
     fzf
