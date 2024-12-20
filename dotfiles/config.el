@@ -118,6 +118,6 @@
              )
         (copilot-accept-completion)
       (evil-insert 1))) ; Default action to insert a tab. Adjust as needed.
-
+  (load "/home/methots/.config/doom/aikey.el")
   ;; Bind the custom function to <tab> in Evil's insert state
   (evil-define-key 'insert 'global (kbd "<tab>") 'my/copilot-tab-or-default))
