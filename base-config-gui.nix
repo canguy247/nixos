@@ -63,7 +63,7 @@
     wl-clipboard
     font-awesome_5
     syncthingtray
-
+    microsoft-edge
     xdg-desktop-portal-hyprland
 
     # Not sure this is required anymore
