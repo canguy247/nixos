@@ -66,8 +66,12 @@ window#waybar {
     margin-top:2px;
 }
 
+#workspaces button.visible {
+    border-color: #2A1CAB;
+}
+
 #workspaces button.active {
-    border-color: #81a1c1;
+    border-color: #2BCE4C;
 }
 
 #clock, #battery, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #tray, #window,#custom-launcher,#custom-power,#custom-pacman ,#custom-network_traffic,#custom-weather{

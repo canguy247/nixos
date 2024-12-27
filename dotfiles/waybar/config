@@ -18,6 +18,7 @@
     "on-click": "activate",
     "all-outputs": true,
     "sort-by-number": true,
+    "move-to-monitor": true,
     "format-icons": {
       "1": "1",
       "2": "2",
