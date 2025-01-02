@@ -3,6 +3,7 @@
 {
   imports = [ # Include the results of the hardware scan.
     ./hardware-nixosDesktop.nix
+    ./dotfiles/8bitdo.nix
   ];
 
   # Bootloader.
